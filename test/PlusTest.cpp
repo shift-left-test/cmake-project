@@ -1,7 +1,7 @@
 /*
   MIT License
 
-  Copyright (c) 2020 Sung Gon Kim
+  Copyright (c) 2019 Sung Gon Kim
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -23,16 +23,12 @@
 */
 
 #include <gtest/gtest.h>
-#include "abs.hpp"
+#include "plus.hpp"
 
-TEST(AbsTest, testOneReturnsOne) {
-  ASSERT_EQ(1, arithmetic::abs(1));
+TEST(PlusTest, testShouldReturnExpectedValue) {
+  ASSERT_EQ(3, arithmetic::plus(1, 2));
 }
 
-TEST(AbsTest, testZeroReturnsZero) {
-  ASSERT_EQ(0, arithmetic::abs(0));
-}
-
-TEST(AbsTest, testMinusOneReturnsOne) {
-  ASSERT_EQ(1, arithmetic::abs(-1));
+TEST(PlusTest, testShouldFail) {
+  ASSERT_EQ(-1, arithmetic::plus(1, 2));
 }

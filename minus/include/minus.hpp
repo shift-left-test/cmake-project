@@ -1,7 +1,7 @@
 /*
   MIT License
 
-  Copyright (c) 2020 Sung Gon Kim
+  Copyright (c) 2019 Sung Gon Kim
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -22,25 +22,20 @@
   SOFTWARE.
 */
 
-#include <gtest/gtest.h>
-#include "sqrt.hpp"
+#ifndef MINUS_HPP_
+#define MINUS_HPP_
 
-TEST(SqrtTest, testTwoReturnsFour) {
-  ASSERT_EQ(4, arithmetic::sqrt(2));
-}
+namespace arithmetic {
 
-TEST(SqrtTest, testOneReturnsOne) {
-  ASSERT_EQ(1, arithmetic::sqrt(1));
-}
+/**
+ * @brief Return the subtracted value
+ *
+ * @param x original value
+ * @param y value to subtract
+ * @return the subtracted value
+ */
+int minus(int x, int y);
 
-TEST(SqrtTest, testZeroReturnsZero) {
-  ASSERT_EQ(0, arithmetic::sqrt(0));
-}
+}  // namespace arithemtic
 
-TEST(SqrtTest, testMinusOneReturnsOne) {
-  ASSERT_EQ(1, arithmetic::sqrt(-1));
-}
-
-TEST(SqrtTest, testMinusTwoReturnsFour) {
-  ASSERT_EQ(4, arithmetic::sqrt(-2));
-}
+#endif  // MINUS_HPP_

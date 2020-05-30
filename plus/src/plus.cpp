@@ -1,7 +1,7 @@
 /*
   MIT License
 
-  Copyright (c) 2020 Sung Gon Kim
+  Copyright (c) 2019 Sung Gon Kim
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -22,13 +22,12 @@
   SOFTWARE.
 */
 
-#ifndef SQRT_HPP_
-#define SQRT_HPP_
+#include "plus.hpp"
 
 namespace arithmetic {
 
-int sqrt(int a);
+int plus(int a, int b) {
+  return a + b;
+}
 
 }  // namespace arithmetic
-
-#endif  // SQRT_HPP_

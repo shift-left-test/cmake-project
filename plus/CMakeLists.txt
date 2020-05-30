@@ -1,12 +1,12 @@
-add_library(sqrt SHARED src/sqrt.cpp)
+add_library(plus SHARED src/plus.cpp)
 
-target_include_directories(sqrt PUBLIC include)
+target_include_directories(plus PUBLIC include)
 
-set_target_properties(sqrt PROPERTIES
+set_target_properties(plus PROPERTIES
                       VERSION 1.0.0
                       SOVERSION 1)
 
-install(TARGETS sqrt
+install(TARGETS plus
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
         LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}

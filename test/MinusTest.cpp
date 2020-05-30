@@ -1,7 +1,7 @@
 /*
   MIT License
 
-  Copyright (c) 2020 Sung Gon Kim
+  Copyright (c) 2019 Sung Gon Kim
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -22,12 +22,13 @@
   SOFTWARE.
 */
 
-#include "abs.hpp"
+#include <gtest/gtest.h>
+#include "minus.hpp"
 
-namespace arithmetic {
-
-int abs(int a) {
-  return (a >= 0) ? a : (-1) * a;
+TEST(MinusTest, testShouldReturnExpectedValue) {
+  ASSERT_EQ(-1, arithmetic::minus(1, 2));
 }
 
-}  // namespace arithmetic
+TEST(MinusTest, testShouldAlsoFail) {
+  ASSERT_EQ(3, arithmetic::minus(1, 2));
+}

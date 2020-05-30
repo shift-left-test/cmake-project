@@ -35,8 +35,8 @@ if(ENABLE_TEST)
   enable_test_coverage()
 endif()
 
-add_subdirectory(sqrt)
-add_subdirectory(abs)
+add_subdirectory(minus)
+add_subdirectory(plus)
 add_subdirectory(program)
 
 if(ENABLE_TEST)

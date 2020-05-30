@@ -1,7 +1,7 @@
 /*
   MIT License
 
-  Copyright (c) 2020 Sung Gon Kim
+  Copyright (c) 2019 Sung Gon Kim
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -22,14 +22,20 @@
   SOFTWARE.
 */
 
-#ifndef ABS_HPP_
-#define ABS_HPP_
+#ifndef PLUS_HPP_
+#define PLUS_HPP_
 
 namespace arithmetic {
 
-int abs(int a);
+/**
+ * @brief Return the sum of the given two value
+ *
+ * @param a first value
+ * @param b second value
+ * @return sum of the two values
+ */
+int plus(int a, int b);
 
 }  // namespace arithmetic
 
-
-#endif  // ABS_HPP_
+#endif  // PLUS_HPP_

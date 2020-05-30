@@ -1,7 +1,7 @@
 /*
   MIT License
 
-  Copyright (c) 2020 Sung Gon Kim
+  Copyright (c) 2019 Sung Gon Kim
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -23,11 +23,18 @@
 */
 
 #include <iostream>
-#include "sqrt.hpp"
-#include "abs.hpp"
+#include "plus.hpp"
+#include "minus.hpp"
 
+/**
+ * @brief Main program routine
+ *
+ * @param argc number of arguments
+ * @param argv list of arguments
+ * @return exit code
+ */
 int main(int argc, char *argv[]) {
-  int result = arithmetic::sqrt(2) + arithmetic::abs(-2);
-  std::cout << "sqrt(2) + abs(-2) = " << result << std::endl;
+  int result = arithmetic::plus(1, 2) + arithmetic::minus(1, 2);
+  std::cout << "(1 + 2) + (1 - 2) = " << result << std::endl;
   return 0;
 }

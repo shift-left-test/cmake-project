@@ -2,14 +2,14 @@ find_package(Threads REQUIRED)
 find_package(GTest REQUIRED)
 find_package(GMock REQUIRED)
 
-add_executable(SampleTest SqrtTest.cpp AbsTest.cpp)
+add_executable(OperatorTest PlusTest.cpp MinusTest.cpp)
 
-target_include_directories(SampleTest
+target_include_directories(OperatorTest
     PRIVATE ${GTEST_INCLUDE_DIRS} ${GMOCK_INCLUDE_DIRS})
 
-target_link_libraries(SampleTest
+target_link_libraries(OperatorTest
     PRIVATE GTest::GTest GMock::GMock GMock::Main ${CMAKE_THREAD_LIBS_INIT})
 
-target_link_libraries(SampleTest PUBLIC sqrt abs)
+target_link_libraries(OperatorTest PUBLIC plus minus)
 
-gtest_add_tests(SampleTest "" AUTO)
+gtest_add_tests(OperatorTest "" AUTO)
