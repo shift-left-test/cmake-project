@@ -1,6 +1,6 @@
 # MIT License
 #
-# Copyright (c) 2019 Sung Gon Kim
+# Copyright (c) 2020 Sung Gon Kim
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,26 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
+
+cmake_minimum_required(VERSION 3.5.1 FATAL_ERROR)
+
+project(cmake-project VERSION 1.0.0)
+
+include(CMakeUtils)
+
+set_cxx_standard(14)
+set_default_build_type(Release)
+
+if(ENABLE_TEST)
+  enable_static_analysis()
+  enable_testing()
+  enable_test_coverage()
+endif()
+
+add_subdirectory(sqrt)
+add_subdirectory(abs)
+add_subdirectory(program)
+
+if(ENABLE_TEST)
+add_subdirectory(test)
+endif()
