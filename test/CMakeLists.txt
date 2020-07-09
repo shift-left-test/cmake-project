@@ -8,7 +8,7 @@ target_include_directories(OperatorTest
     PRIVATE ${GTEST_INCLUDE_DIRS} ${GMOCK_INCLUDE_DIRS})
 
 target_link_libraries(OperatorTest
-    PRIVATE GTest::GTest GMock::GMock GMock::Main ${CMAKE_THREAD_LIBS_INIT})
+    PRIVATE ${GTEST_LIBRARIES} ${GMOCK_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
 target_link_libraries(OperatorTest PUBLIC plus minus)
 
