@@ -133,5 +133,6 @@ program/program
 html/
 latex/
 test/OperatorTest
+*.core
 
 # End of https://www.gitignore.io/api/vim,c++,cmake,emacs

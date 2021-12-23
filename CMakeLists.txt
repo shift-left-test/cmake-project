@@ -29,8 +29,15 @@ include(CMakeUtils)
 set_cxx_standard(14)
 set_default_build_type(Release)
 
-if(ENABLE_TEST)
+option(ENABLE_STATIC_ANALYSIS "Enable static analysis checks" ON)
+option(ENABLE_TEST "Enable testing" OFF)
+option(WITH_DEFECT_CODE "With defect code" OFF)
+
+if(ENABLE_STATIC_ANALYSIS)
   enable_static_analysis()
+endif()
+
+if(ENABLE_TEST)
   enable_testing()
   enable_test_coverage()
 endif()

@@ -4,6 +4,10 @@ find_package(GMock REQUIRED)
 
 add_executable(OperatorTest PlusTest.cpp MinusTest.cpp)
 
+if(WITH_DEFECT_CODE)
+  target_sources(OperatorTest PRIVATE SegFaultTest.cpp)
+endif()
+
 target_include_directories(OperatorTest
     PRIVATE ${GTEST_INCLUDE_DIRS} ${GMOCK_INCLUDE_DIRS})
 
