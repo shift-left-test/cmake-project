@@ -34,7 +34,7 @@ option(ENABLE_TEST "Enable testing" OFF)
 option(WITH_DEFECT_CODE "With defect code" OFF)
 
 if(ENABLE_STATIC_ANALYSIS)
-  enable_static_analysis()
+  enable_static_analysis(clang-tidy cppcheck cpplint)
 endif()
 
 if(ENABLE_TEST)
