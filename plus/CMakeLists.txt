@@ -1,6 +1,6 @@
-add_library(plus SHARED src/plus.cpp)
+add_library(plus SHARED plus.cpp)
 
-target_include_directories(plus PUBLIC include)
+target_include_directories(plus PUBLIC ${CMAKE_SOURCE_DIR})
 
 set_target_properties(plus PROPERTIES
                       VERSION 1.0.0

@@ -1,6 +1,6 @@
-add_library(minus STATIC src/minus.cpp)
+add_library(minus STATIC minus.cpp)
 
-target_include_directories(minus PUBLIC include)
+target_include_directories(minus PUBLIC ${CMAKE_SOURCE_DIR})
 
 install(TARGETS minus
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
