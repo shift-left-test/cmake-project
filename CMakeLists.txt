@@ -22,18 +22,17 @@
 
 cmake_minimum_required(VERSION 3.3 FATAL_ERROR)
 
-project(cmake-project VERSION 2.0.0)
+project(cmake-project VERSION 1.0.0)
 
 option(ENABLE_TEST "Enable testing" OFF)
-option(WITH_DEFECT_CODE "With defect code" OFF)
 
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 if(ENABLE_TEST)
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g -fprofile-arcs -ftest-coverage")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g -fprofile-arcs -ftest-coverage")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fprofile-arcs -ftest-coverage")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
   enable_testing()
 endif()
 
