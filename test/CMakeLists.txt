@@ -1,19 +1,14 @@
-find_package(Threads REQUIRED)
-find_package(GTest REQUIRED)
-find_package(GMock REQUIRED)
+if(ENABLE_TEST)
+  include(GoogleTest)
 
-add_executable(OperatorTest PlusTest.cpp MinusTest.cpp)
+  add_executable(OperatorTest PlusTest.cpp MinusTest.cpp)
 
-if(WITH_DEFECT_CODE)
-  target_sources(OperatorTest PRIVATE SegFaultTest.cpp)
-endif()
+  if(WITH_DEFECT_CODE)
+    target_sources(OperatorTest PRIVATE SegFaultTest.cpp)
+  endif()
 
-target_include_directories(OperatorTest
-    PRIVATE ${GTEST_INCLUDE_DIRS} ${GMOCK_INCLUDE_DIRS})
+  target_link_libraries(OperatorTest PRIVATE plus minus)
+  target_link_libraries(OperatorTest PRIVATE gtest gtest_main)
 
-target_link_libraries(OperatorTest
-    PRIVATE ${GTEST_LIBRARIES} GMock::GMock GMock::Main ${CMAKE_THREAD_LIBS_INIT})
-
-target_link_libraries(OperatorTest PUBLIC plus minus)
-
-gtest_add_tests(OperatorTest "" AUTO)
+  gtest_add_tests(OperatorTest "" AUTO)
+endif(ENABLE_TEST)

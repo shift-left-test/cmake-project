@@ -22,30 +22,22 @@
 
 cmake_minimum_required(VERSION 3.3 FATAL_ERROR)
 
-project(cmake-project VERSION 1.0.0)
+project(cmake-project VERSION 2.0.0)
 
-include(CMakeUtils)
-
-set_cxx_standard(14)
-set_default_build_type(Release)
-
-option(ENABLE_STATIC_ANALYSIS "Enable static analysis checks" ON)
 option(ENABLE_TEST "Enable testing" OFF)
 option(WITH_DEFECT_CODE "With defect code" OFF)
 
-if(ENABLE_STATIC_ANALYSIS)
-  enable_static_analysis(cppcheck cpplint)
-endif()
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 if(ENABLE_TEST)
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O0 -g -fprofile-arcs -ftest-coverage")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g -fprofile-arcs -ftest-coverage")
   enable_testing()
-  enable_test_coverage()
 endif()
 
 add_subdirectory(minus)
 add_subdirectory(plus)
 add_subdirectory(program)
-
-if(ENABLE_TEST)
 add_subdirectory(test)
-endif()
